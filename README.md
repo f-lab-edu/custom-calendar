@@ -7,6 +7,23 @@
 
 
 ## ERD
+DB로는 MySQL을 사용한다.
+<BR>
+기능별로 table을 분리한다.
+<BR>
+기상정보는 DB에 저장하지 않고 일정 시간을 기준으로 조회한 데이터를 사용할 예정이다.
+
+special_day_data : 특일정보를 담은 table이다.
+* name : 특일명
+* specialDayDate : 특일날짜
+* registrationDate : 등록시간
+
+new_stock_data : 공모주 일정을 담은 table이다.
+* name : 공모주명
+* subscriptionDate : 청약날짜
+* winningDate : 청약당첨날짜
+* crapeDate : 상장날짜
+* registrationDate : 등록시간 
 
 
 ## Branch 관리
@@ -42,7 +59,7 @@
 * 공휴일 표기를 위한 공공데이터포털 API(특일정보)
 https://www.data.go.kr/data/15012690/openapi.do
 * 날씨 이모티콘 표기를 위한 API
-
+https://data.kma.go.kr/api/selectApiDetail.do
 * 공모주 일정 표기를 위한 API
     * 대부분의 기업들이 사용하는 coocon API는 과금이 필요하고, 이 프로젝트는 영리 목적이 아니기 때문에 크롤링을 통해 진행할 예정이다.
     * 추후 Open API가 있는 경우, api로 변경하고, 크롤링이 문제가 되는 경우에 삭제할 예정이다.
